@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.angular",
+    "\\obj",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\login",
+    "\\src\\app\\register",
+    "\\src\\app\\view"
+  ],
+  "SelectedNode": "\\src\\app\\register\\register.component.html",
+  "PreviewInSolutionExplorer": false
+}

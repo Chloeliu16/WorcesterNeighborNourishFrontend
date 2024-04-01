@@ -1,0 +1,28 @@
+<div>
+  <h2>Post Food</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="foodname">Food Name:</label>
+      <input type="text" id="foodname" name="foodname" [(ngModel)]="foodname">
+    </div>
+    <div>
+      <label for="foodtype">Food Type:</label>
+      <input type="text" id="foodtype" name="foodtype" [(ngModel)]="foodtype">
+    </div>
+    <div>
+      <label for="foodingredients">Food Ingredients:</label>
+      <input type="text" id="foodingredients" name="foodingredients" [(ngModel)]="foodingredients">
+    </div>
+    <div>
+      <label for="foodamount">Food Amount:</label>
+      <input type="number" id="foodamount" name="foodamount" [(ngModel)]="foodamount">
+    </div>
+    <button type="submit">Post</button>
+  </form>
+  <div *ngIf="error">
+    <p style="color: red;">Post failed: {{error}}</p>
+  </div>
+  <div *ngIf="success">
+    <p style="color: green;">Post Success!</p>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div>
+  <h2>Reserve Food</h2>
+  <div>
+    <strong>Food Name:</strong> {{ foodName }}
+  </div>
+  <div>
+    <strong>Available Amount:</strong> {{ amount }}
+  </div>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="reservedAmount">Reserved Amount:</label>
+      <input type="number" id="reservedAmount" name="reservedAmount" [(ngModel)]="reservedAmount">
+    </div>
+    <button type="submit">Reserve</button>
+  </form>
+  <div *ngIf="error">
+    <p style="color: red;">Reserve failed: {{error}}</p>
+  </div>
+  <div *ngIf="success">
+    <p style="color: green;">Reserve food: {{foodName}} succeeded!</p>
+  </div>
+</div>

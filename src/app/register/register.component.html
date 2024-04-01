@@ -1,0 +1,48 @@
+<div>
+  <h2>Register</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label>Choose register type:</label>
+      <div>
+        <input type="radio" id="restaurant" name="registerType" value="restaurant" [(ngModel)]="selectedAccountType">
+        <label for="restaurant">Restaurant</label>
+      </div>
+      <div>
+        <input type="radio" id="organization" name="registerType" value="organization" [(ngModel)]="selectedAccountType">
+        <label for="organization">Organization</label>
+      </div>
+      <div>
+        <input type="radio" id="customer" name="registerType" value="customer" [(ngModel)]="selectedAccountType">
+        <label for="customer">Customer</label>
+      </div>
+    </div>
+    <div>
+      <label for="username">Username (unique for login):</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username">
+    </div>
+    <div>
+      <label for="name">Name (for display):</label>
+      <input type="text" id="name" name="name" [(ngModel)]="name">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="text" id="password" name="password" [(ngModel)]="password">
+    </div>
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" [(ngModel)]="phone">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" [(ngModel)]="email">
+    </div>
+    <div>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" [(ngModel)]="address">
+    </div>
+    <button type="submit">Register</button>
+  </form>
+  <div *ngIf="error">
+    <p style="color: red;">Register failed: {{error}}</p>
+</div>
+</div>

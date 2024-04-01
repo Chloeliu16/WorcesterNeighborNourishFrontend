@@ -1,0 +1,2 @@
+C:\Users\ruizh\OneDrive\Desktop\Angular\test\obj\Debug\WorcesterNeighborNourishFrontend.esproj.CoreCompileInputs.cache
+C:\Users\ruizh\OneDrive\Desktop\Angular\WorcesterNeighborNourishFrontend\obj\Debug\WorcesterNeighborNourishFrontend.esproj.CoreCompileInputs.cache
