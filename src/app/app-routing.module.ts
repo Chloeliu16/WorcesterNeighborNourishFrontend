@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'view/:userId', component: ViewComponent },
   { path: 'post/:accountType/:accountId', component: PostComponent },
-  { path: 'reserve/:userId/:foodName/:supplierUsername/:supplierType/:amount', component: ReserveComponent },
+  { path: 'reserve/:userId/:foodName/:restUsername/:amount', component: ReserveComponent },
 ];
 
 @NgModule({

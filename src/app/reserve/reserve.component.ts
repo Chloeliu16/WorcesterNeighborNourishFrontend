@@ -10,8 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ReserveComponent {
   userId!: string;
   foodName!: string;
-  supplierUsername!: string;
-  supplierType!: number;
+  restUsername!: string;
   amount!: number;
   error: string = '';
   reserveResponse: any;
@@ -22,8 +21,7 @@ export class ReserveComponent {
   ngOnInit(): void {
     this.userId = this.extractRouteParam('userId');
     this.foodName = this.extractRouteParam('foodName');
-    this.supplierUsername = this.extractRouteParam('supplierUsername');
-    this.supplierType = this.extractRouteParam('supplierType', true);
+    this.restUsername = this.extractRouteParam('restUsername');
     this.amount = this.extractRouteParam('amount', true);
   }
 
@@ -45,12 +43,8 @@ export class ReserveComponent {
       this.error = 'Empty food name!';
       return;
     }
-    if (!this.supplierUsername) {
-      this.error = 'Empty supplier username!';
-      return;
-    }
-    if (!this.supplierType) {
-      this.error = 'Empty supplier type!';
+    if (!this.restUsername) {
+      this.error = 'Empty restaruant username!';
       return;
     }
     if (!this.amount) {
@@ -62,8 +56,7 @@ export class ReserveComponent {
     }
 
     let reserveData = {
-      supplierUsername: this.supplierUsername,
-      supplierType: this.supplierType,
+      restUsername: this.restUsername,
       cusUsername: this.userId,
       foodName: this.foodName,
       amount: this.reservedAmount,
