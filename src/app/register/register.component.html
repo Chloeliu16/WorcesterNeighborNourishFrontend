@@ -36,9 +36,13 @@
       <label for="email">Email:</label>
       <input type="text" id="email" name="email" [(ngModel)]="email">
     </div>
-    <div>
+    <div *ngIf="selectedAccountType == 'restaurant' || selectedAccountType == 'organization'">
       <label for="address">Address:</label>
       <input type="text" id="address" name="address" [(ngModel)]="address">
+    </div>
+    <div *ngIf="selectedAccountType == 'restaurant'">
+      <label for="certificate">Certificate:</label>
+      <input type="text" id="certificate" name="certificate" [(ngModel)]="certificate">
     </div>
     <button type="submit">Register</button>
   </form>

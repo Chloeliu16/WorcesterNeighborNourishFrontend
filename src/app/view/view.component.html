@@ -9,10 +9,10 @@
         <th>Food Type</th>
         <th>Food Ingredients</th>
         <th>Amount</th>
-        <th>Supplier</th>
-        <th>Supplier Phone</th>
-        <th>Supplier Email</th>
-        <th>Supplier Address</th>
+        <th>Restaurant</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
         <th>Reserve</th>
       </tr>
     </thead>
@@ -22,11 +22,65 @@
         <td>{{ item.foodType }}</td>
         <td>{{ item.foodIngredients }}</td>
         <td>{{ item.amount }}</td>
-        <td>{{ item.supplierName }}</td>
-        <td>{{ item.supplierPhone }}</td>
-        <td>{{ item.supplierEmail }}</td>
-        <td>{{ item.supplierAddress }}</td>
-        <td><a [routerLink]="['/reserve', userId, item.foodName, item.supplierUsername, item.supplierType, item.amount]">Reserve</a></td>
+        <td>{{ item.restName }}</td>
+        <td>{{ item.restPhone }}</td>
+        <td>{{ item.restEmail }}</td>
+        <td>{{ item.restAddress }}</td>
+        <td><a [routerLink]="['/reserve', userId, item.foodName, item.restUsername, item.amount]">Reserve</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Activity</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Organization</th>
+        <th>Contact Name</th>
+        <th>Contact Phone</th>
+        <th>Contact Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of responseData.activities">
+        <td>{{ item.activityName }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.startTime }}</td>
+        <td>{{ item.endTime }}</td>
+        <td>{{ item.orgName }}</td>
+        <td>{{ item.contactName }}</td>
+        <td>{{ item.contactPhone }}</td>
+        <td>{{ item.contactEmail }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="previousReservation && previousReservation.success">
+  <h2>Reservation History</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Customer Name</th>
+        <th>Restaurant Name</th>
+        <th>Food Name</th>
+        <th>Amount</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of previousReservation.orders">
+        <td>{{ item.orderNum }}</td>
+        <td>{{ item.cusName }}</td>
+        <td>{{ item.restName }}</td>
+        <td>{{ item.foodName }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.status }}</td>
       </tr>
     </tbody>
   </table>
@@ -34,4 +88,23 @@
 
 <div *ngIf="error">
   <p style="color: red;">View Failed: {{ error }}</p>
+</div>
+
+<h2>Feedback</h2>
+<form (ngSubmit)="onFeedbackSubmit()">
+  <div>
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type" [(ngModel)]="type">
+  </div>
+  <div>
+    <label for="info">Info:</label>
+    <input type="text" id="info" name="info" [(ngModel)]="info">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<div *ngIf="feedbackerror">
+  <p style="color: red;">Submit feedback failed: {{feedbackerror}}</p>
+</div>
+<div *ngIf="success">
+  <p style="color: green;">Submit feedback succeeded!</p>
 </div>
