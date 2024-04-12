@@ -13,9 +13,6 @@ export class HomeComponent {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  ngOnInit(): void {
-    this.sendViewMaintenanceRequest();
-  }
 
   redirectToRegister() {
     this.router.navigate(['/register']);
@@ -23,6 +20,22 @@ export class HomeComponent {
 
   redirectToLogin() {
     this.router.navigate(['/login']);
+  }
+
+  redirectToMaintenance() {
+    this.router.navigate(['/maintenance']);
+  }
+
+  redirectToFaqs() {
+    this.router.navigate(['/faqs']);
+  }
+
+  redirectToDonation() {
+    this.router.navigate(['/donation']);
+  }
+
+  redirectToJoinUs() {
+    this.router.navigate(['/joinus']);
   }
 
   sendViewMaintenanceRequest() {

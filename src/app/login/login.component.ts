@@ -16,6 +16,10 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  redirectToHome() {
+    this.router.navigate(['/home']);
+  }
+
   onSubmit() {
     if (!this.username || !this.password) {
       this.error = 'Empty username or password!';

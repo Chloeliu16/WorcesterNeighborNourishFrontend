@@ -11,6 +11,12 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { ReserveComponent } from './reserve/reserve.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
+import { FaqsComponent } from './faqs/faqs.component';
+import { DonationComponent } from './donation/donation.component';
+import { ThankdonationComponent } from './donation/thankdonation/thankdonation.component';
+import { JoinusComponent } from './joinus/joinus.component';
+import { ThankjoinusComponent } from './joinus/thankjoinus/thankjoinus.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import { ReserveComponent } from './reserve/reserve.component';
     LoginComponent,
     HomeComponent,
     PostComponent,
-    ReserveComponent
+    ReserveComponent,
+    MaintenanceComponent,
+    FaqsComponent,
+    DonationComponent,
+    ThankdonationComponent,
+    JoinusComponent,
+    ThankjoinusComponent
   ],
   imports: [
     BrowserModule,
