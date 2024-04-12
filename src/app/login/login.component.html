@@ -1,32 +1,40 @@
-<div>
-  <h2>Login</h2>
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label>Choose login type:</label>
-      <div>
-        <input type="radio" id="restaurant" name="loginType" value="restaurant" [(ngModel)]="selectedAccountType">
-        <label for="restaurant">Restaurant</label>
-      </div>
-      <div>
-        <input type="radio" id="organization" name="loginType" value="organization" [(ngModel)]="selectedAccountType">
-        <label for="organization">Organization</label>
-      </div>
-      <div>
-        <input type="radio" id="customer" name="loginType" value="customer" [(ngModel)]="selectedAccountType">
-        <label for="customer">Customer</label>
+<body>
+  <div>
+    <div class="container">
+      <h2>Login</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div>
+          <div class="type">
+            <h3>Choose login type:</h3>
+          </div>
+          <div>
+            <label for="restaurant">Restaurant</label>
+            <input type="radio" id="restaurant" name="loginType" value="restaurant" [(ngModel)]="selectedAccountType">
+          </div>
+          <div>
+            <label for="organization">Organization</label>
+            <input type="radio" id="organization" name="loginType" value="organization"
+              [(ngModel)]="selectedAccountType">
+          </div>
+          <div>
+            <label for="customer">Customer</label>
+            <input type="radio" id="customer" name="loginType" value="customer" [(ngModel)]="selectedAccountType">
+          </div>
+        </div>
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" [(ngModel)]="username">
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password">
+        </div>
+        <button type="submit" style="margin-right: 50px;">Login</button>
+        <button (click)="redirectToHome()">Back</button>
+      </form>
+      <div *ngIf="error">
+        <p style="color: red;">Login failed: {{error}}</p>
       </div>
     </div>
-    <div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" [(ngModel)]="username">
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="password">
-    </div>
-    <button type="submit">Login</button>
-  </form>
-  <div *ngIf="error">
-    <p style="color: red;">Login failed: {{error}}</p>
   </div>
-</div>
+</body>

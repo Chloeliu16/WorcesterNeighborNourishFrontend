@@ -1,0 +1,90 @@
+body {
+    background-image: none;
+    background-size: 100%;
+    display: flex;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+h2 {
+    color: rgba(6, 82, 157, 1);
+}
+
+button {
+    background-color: rgba(6, 82, 157, 0.873);
+    font-weight: 500;
+    /* 绿色背景 */
+    color: white;
+    /* 白色文本 */
+    padding: 14px 18px;
+    /* 内边距 */
+    margin: 8px 0;
+    /* 外边距 */
+    border: none;
+    /* 无边框 */
+    border-radius: 4px;
+    /* 边角圆滑 */
+    cursor: pointer;
+    /* 鼠标悬停时的指针形状 */
+    transition: all 0.3s ease;
+    /* 过渡效果 */
+    font-size: 15px;
+    /* 文字大小 */
+}
+
+button:hover {
+    background-color: #45a049;
+    /* 按钮悬停时的背景色 */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    /* 悬停时的阴影效果 */
+}
+
+.container {
+    padding: 20px;
+    min-width: 700px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    /* 设置字体 */
+    color: rgba(6, 82, 157, 1);
+    text-align: left;
+}
+
+.container label {
+    display: block;
+    /* 使标签独占一行 */
+    margin-bottom: 5px;
+    /* 在标签下方增加一些空间 */
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    padding: 8px;
+}
+
+tbody tr {
+    margin-bottom: 20px;
+}

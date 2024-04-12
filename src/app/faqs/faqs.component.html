@@ -1,0 +1,41 @@
+<p>faqs works!</p>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h2>Faqs</h2>
+        </div>
+        <div *ngIf="faqs">
+            <h2>nizaishuoshenme</h2>
+            <div *ngFor="let faq of faqs">
+                <h2>question{{ faq.id }}: {{ faq.question }}</h2>
+                <p>{{ faq.answer }}</p>
+            </div>
+        </div>
+        <table style="width: 50%;">
+            <thead>
+                <tr>
+                    <th style="width: 10%;"> </th>
+                    <th style="width: 40%;">Question</th>
+                    <th style="width: 50%;">Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of responseData?.faqs">
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.question }}</td>
+                        <td rowspan="2">{{ item.answer }}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+        <div class="button">
+            <button (click)="redirectToHome()">Back to Home</button>
+        </div>
+    </div>
+</body>

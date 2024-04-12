@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Volunteer Registration</h2>
+    <h3>Thank you for your support!</h3>
+    <form (ngSubmit)="onSubmit()" class="registration-form">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="name" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" [(ngModel)]="age" required>
+        </div>
+        <div class="form-group">
+            <label for="career">Career:</label>
+            <input type="text" id="career" name="career" [(ngModel)]="career" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" [(ngModel)]="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" [(ngModel)]="city" required>
+        </div>
+        <div class="form-group">
+            <label for="zipcode">Zipcode:</label>
+            <input type="text" id="zipcode" name="zipcode" [(ngModel)]="zipcode" required>
+        </div>
+        <div class="form-group">
+            <label for="availability">Availability:</label>
+            <input type="text" id="availability" name="availability" [(ngModel)]="availability" required>
+        </div>
+        <button type="submit" style="margin-right: 50px;" (click)="redirectToThank()">Submit</button>
+        <button (click)="redirectToHome()">Back</button>
+    </form>
+</div>

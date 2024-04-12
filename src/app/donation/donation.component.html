@@ -1,0 +1,59 @@
+<body>
+    <div>
+        <div class="container">
+            <h2>Donation</h2>
+            <form (ngSubmit)="onSubmit()">
+                <div class="choose">
+                    <div class="type">
+                        <h3>Thank you for your generous donation!</h3>
+                    </div>
+                </div>
+                <div>
+                    <label for="donorType">Donor Type</label>
+                    <select id="donorType" [(ngModel)]="selectedDonorType" [ngModelOptions]="{standalone: true}"
+                        (change)="onDonorTypeChange()">
+                        <option value="individual">Individual</option>
+                        <option value="company">Company</option>
+                        <option value="organization">Organization</option>
+                    </select>
+                </div>
+                <!-- <div>
+                    <label for="donorType">Donor Type</label>
+                    <input type="text" id="donorType" name="donorType" [(ngModel)]="donorType">
+                </div> -->
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="name">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" [(ngModel)]="email">
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" [(ngModel)]="phone">
+                </div>
+                <div>
+                    <label for="typeOfDonatedFood">Type of Donation Food</label>
+                    <input type="text" id="typeOfDonatedFood" name="typeOfDonatedFood" [(ngModel)]="typeOfDonatedFood">
+                </div>
+                <div>
+                    <label for="quantityOfDonations">Quantity of Donations</label>
+                    <input type="text" id="quantityOfDonations" name="quantityOfDonations"
+                        [(ngModel)]="quantityOfDonations">
+                </div>
+                <div>
+                    <label for="other">Other</label>
+                    <input type="text" id="other" name="other" [(ngModel)]="other">
+                </div>
+                <div class="btn">
+                    <button type="submit" style="margin-right: 50px;">Submit</button>
+                    <button (click)="redirectToHome()">Back</button>
+                </div>
+            </form>
+            <div *ngIf="error">
+                <p style="color: red;">Register failed: {{error}}</p>
+            </div>
+        </div>
+    </div>
+</body>

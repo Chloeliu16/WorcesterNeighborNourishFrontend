@@ -1,0 +1,111 @@
+body {
+    background-image: none;
+    background-size: 100%;
+    display: flex;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    padding: 20px;
+    min-width: 400px;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    color: rgba(6, 82, 157, 1);
+    text-align: left;
+    max-height: 200px;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.type>h3 {
+    font-family: "Sriracha", cursive;
+    color: rgba(6, 82, 157, 1);
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.container input[type="text"],
+input[type="password"] {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.container div {
+    margin-bottom: 15px;
+}
+
+.choose {
+    text-align: left;
+}
+
+.choose div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.choose label,
+.choose div {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: rgba(6, 82, 157, 1);
+    font-weight: 500;
+    color: white;
+    padding: 14px 18px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #45a049;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"],
+input[type="password"] {
+    background-color: #d1edfc;
+    width: 200px;
+    box-sizing: border-box;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    border: 1.5px solid rgba(6, 82, 157, 0.873);
+    border-radius: 0.5rem;
+    margin: 4px 0 15px 0;
+    font-size: 16px;
+    color: rgba(6, 82, 157, 0.873);
+    display: block;
+    box-sizing: border-box;
+}

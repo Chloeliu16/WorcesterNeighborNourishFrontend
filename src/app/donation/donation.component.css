@@ -2,7 +2,6 @@ body {
     background-image: none;
     background-size: 100%;
     display: flex;
-    /* justify-content: center; */
     align-items: flex-start;
     min-height: 100vh;
     margin: 0;
@@ -10,13 +9,10 @@ body {
 }
 
 .container {
-    /* border: 1px solid #fff; */
     padding: 20px;
-    /* 上下保持20px外边距，左右居中 */
-    min-width: 400px;
-    /* 设置最大宽度为600px */
+    margin: 20px auto;
+    min-width: 500px;
     background-color: rgba(255, 255, 255, 0.7);
-    /* 设置背景色为半透明的白色 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -25,29 +21,57 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-items: center;
     text-align: center;
     min-height: 100vh;
 }
 
 .container {
+    margin-top: 20px;
     font-family: Arial, sans-serif;
-    font-weight: 700;
-    /* 设置字体 */
-    color: rgba(6, 82, 157, 1);
+    color: rgb(202, 87, 87);
     text-align: left;
+    max-height: 200px;
 }
 
 
 .container label {
     display: block;
+    margin-bottom: 5px;
+}
+
+/* 修改选择框的大小 */
+#donorType {
+    width: 200px;
+    /* 设置宽度 */
+    height: 30px;
+    /* 设置高度 */
+}
+
+/* 修改选择框的边框颜色 */
+#donorType {
+    border-radius: 0.5rem;
+    border: 1.5px solid rgb(202, 87, 87);
+    /* 设置边框为2px宽度的灰色实线 */
+}
+
+/* 修改选择框的背景颜色 */
+#donorType {
+    background-color: rgb(232, 193, 193);
+    /* 设置背景颜色为浅灰色 */
+}
+
+/* 修改选择框中选项文字的颜色 */
+#donorType option {
+    color: #333;
+    /* 设置选项文字颜色为深灰色 */
 }
 
 .type>h3 {
+    margin-top: -10px;
     font-family: "Sriracha", cursive;
-    color: rgba(6, 82, 157, 1);
+    color: rgb(184, 24, 24);
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 100;
 }
 
 .container input[type="text"],
@@ -91,8 +115,14 @@ input[type="radio"] {
     /* 在元素下方添加一些空间以便于阅读 */
 }
 
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 button {
-    background-color: rgba(6, 82, 157, 0.873);
+    background-color: rgb(217, 103, 103);
     font-weight: 500;
     /* 绿色背景 */
     color: white;
@@ -114,28 +144,28 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #9cc76b;
     /* 按钮悬停时的背景色 */
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     /* 悬停时的阴影效果 */
 }
 
 input[type="text"] {
-    background-color: #d1edfc;
+    background-color: rgb(238, 210, 210);
     /* 浅灰色背景 */
     text-align: left;
 }
 
 input[type="text"],
 input[type="radio"] {
-    border: 1.5px solid rgba(6, 82, 157, 1);
+    border: 1.5px solid rgb(217, 103, 103);
     border-radius: 0.5rem;
     padding: 8px 8px;
     /* 上下8px，左右10px的内边距 */
     margin: 4px 0 15px 0;
     /* 输入框之间的间距，上下间距5px，无左右间距 */
     font-size: 16px;
-    color: rgba(6, 82, 157, 1);
+    color: rgb(217, 103, 103);
     /* 字体大小 */
     display: block;
     /* 使输入框单独占据一行 */

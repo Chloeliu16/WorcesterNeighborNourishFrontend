@@ -1,11 +1,80 @@
-button {
-  margin-right: 10px; /* Adjust the value as needed */
+body {
+  background-image: none;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-table, th, td {
-  border: 1px solid grey;
-  border-collapse: collapse;
+
+.container {
+  width: 100%;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
+
+
+.button {
+  width: 200px;
+  margin: 10px;
+  /* 可选，为按钮添加一些外边距 */
+}
+
+.button button {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin-top: 50px;
+}
+
+.button button {
+  background-color: #1bad05;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1.5rem;
+  border-color: #fff;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button button:hover {
+  background-color: #fba609;
+}
+
+
+
+table,
+th,
+td {
+  width: 200px;
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  text-align: center;
+}
+
 
 table {
   width: 50%

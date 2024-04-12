@@ -20,6 +20,10 @@ export class RegisterComponent {
   error: string = '';
   constructor(private http: HttpClient, private router: Router) { }
 
+  redirectToHome() {
+    this.router.navigate(['/home']);
+  }
+
   onSubmit() {
     if (!this.username) {
       this.error = 'Empty username!';
