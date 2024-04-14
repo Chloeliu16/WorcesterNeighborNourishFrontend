@@ -2,7 +2,6 @@ body {
     background-image: none;
     background-size: 100%;
     display: flex;
-    /* justify-content: center; */
     align-items: flex-start;
     min-height: 100vh;
     margin: 0;
@@ -12,11 +11,8 @@ body {
 .container {
     /* border: 1px solid #fff; */
     padding: 20px;
-    /* 上下保持20px外边距，左右居中 */
     min-width: 400px;
-    /* 设置最大宽度为600px */
     background-color: rgba(255, 255, 255, 0.7);
-    /* 设置背景色为半透明的白色 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,14 +29,25 @@ body {
 .container {
     font-family: Arial, sans-serif;
     font-weight: 700;
-    /* 设置字体 */
     color: rgba(6, 82, 157, 1);
     text-align: left;
 }
 
-
 .container label {
     display: block;
+}
+
+h2 {
+    margin-top: 60px;
+}
+
+form {
+    width: 250px;
+    margin-top: -20px;
+}
+
+h4 {
+    font-weight: 100;
 }
 
 .type>h3 {
@@ -53,76 +60,52 @@ body {
 .container input[type="text"],
 input[type="radio"] {
     display: block;
-    /* 使输入框独占一行 */
     width: 100%;
-    /* 输入框宽度充满容器宽度 */
     box-sizing: border-box;
-    /* 防止边框和内边距撑开容器 */
     margin-bottom: 10px;
-    /* 在输入框下方增加一些空间 */
     text-align: left;
-    /* 文本在输入框中右对齐 */
 }
 
 .container div {
     margin-bottom: 15px;
-    /* 增加每个div之间的距离 */
 }
 
 .choose {
     text-align: left;
-    /* 确保文字左对齐 */
 }
 
 .choose div {
     display: flex;
-    /* 使用Flexbox布局 */
     justify-content: space-between;
-    /* 使内容分散对齐，标签在左，单选按钮在右 */
     align-items: center;
-    /* 垂直居中对齐 */
 }
 
 .choose label,
 .choose div {
     display: block;
-    /* 确保标签和包含输入项的div独占一行 */
     margin-bottom: 5px;
-    /* 在元素下方添加一些空间以便于阅读 */
 }
 
 button {
     background-color: rgba(6, 82, 157, 0.873);
     font-weight: 500;
-    /* 绿色背景 */
     color: white;
-    /* 白色文本 */
     padding: 14px 18px;
-    /* 内边距 */
     margin: 8px 0;
-    /* 外边距 */
     border: none;
-    /* 无边框 */
     border-radius: 4px;
-    /* 边角圆滑 */
     cursor: pointer;
-    /* 鼠标悬停时的指针形状 */
     transition: all 0.3s ease;
-    /* 过渡效果 */
     font-size: 15px;
-    /* 文字大小 */
 }
 
 button:hover {
     background-color: #45a049;
-    /* 按钮悬停时的背景色 */
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    /* 悬停时的阴影效果 */
 }
 
 input[type="text"] {
     background-color: #d1edfc;
-    /* 浅灰色背景 */
     text-align: left;
 }
 
@@ -131,25 +114,16 @@ input[type="radio"] {
     border: 1.5px solid rgba(6, 82, 157, 1);
     border-radius: 0.5rem;
     padding: 8px 8px;
-    /* 上下8px，左右10px的内边距 */
     margin: 4px 0 15px 0;
-    /* 输入框之间的间距，上下间距5px，无左右间距 */
     font-size: 16px;
     color: rgba(6, 82, 157, 1);
-    /* 字体大小 */
     display: block;
-    /* 使输入框单独占据一行 */
     width: calc(100% - 22px);
-    /* 计算宽度，确保输入框宽度适应父容器，减去的值为边框和内边距的总和 */
     box-sizing: border-box;
-    /* 确保边框和内边距的宽度包含在width内 */
 }
 
 input[type="radio"] {
     display: inline-block;
-    /* 单选按钮保持内联显示 */
     margin-right: 1px;
-    /* 单选按钮右侧的间距 */
     width: auto;
-    /* 单选按钮宽度自适应 */
 }

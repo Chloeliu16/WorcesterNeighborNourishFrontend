@@ -1,23 +1,83 @@
-<div *ngIf="accountType == 'restaurant'">
-  <h2>Post Food</h2>
+<div class="container" *ngIf="accountType == 'restaurant'">
+  <div class="title">
+    <h2>Post Food</h2>
+  </div>
   <form (ngSubmit)="onFoodSubmit()">
     <div>
-      <label for="foodname">Food Name:</label>
+      <label for="foodtype">Food Type(choose)</label>
+      <select id="foodtype" [(ngModel)]="selectedFoodType" [ngModelOptions]="{standalone: true}"
+        (change)="onTypeChange()">
+        <option value="MainDishes">Main Dishes</option>
+        <option value="Appetizers">Appetizers</option>
+        <option value="Desserts">Desserts</option>
+        <option value="Beverages">Beverages</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <!-- <div *ngIf="selectedFoodType == 'Appetizers'">
+      <label for="foodtype2">Food Type2(choose)</label>
+      <select id="foodtype2" [(ngModel)]="selectedFood" [ngModelOptions]="{standalone: true}" (change)="onFoodChange()">
+        <option value="Salads">Salads</option>
+        <option value="Soups">Soups</option>
+        <option value="Spring Rolls">Spring Rolls</option>
+        <option value="Fried Chicken">Fried Chicken</option>
+        <option value="Cheese">Cheese</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div *ngIf="selectedFoodType == 'MainDishes'">
+      <label for="foodtype2">Food Type2(choose)</label>
+      <select id="foodtype2" [(ngModel)]="selectedFood" [ngModelOptions]="{standalone: true}" (change)="onFoodChange()">
+        <option value="Burgers">Burgers</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Grilled Meats">Grilled Meats</option>
+        <option value="Pasta">Pasta</option>
+        <option value="Stir-fries">Stir-fries</option>
+        <option value="Bread">Bread</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div *ngIf="selectedFoodType == 'Desserts'">
+      <label for="foodtype2">Food Type2(choose)</label>
+      <select id="foodtype2" [(ngModel)]="selectedFood" [ngModelOptions]="{standalone: true}" (change)="onFoodChange()">
+        <option value="Cakes">Cakes</option>
+        <option value="Cookies">Cookies</option>
+        <option value="Ice Cream">Ice Cream</option>
+        <option value="Pies">Pies</option>
+        <option value="Doughnuts">Doughnuts</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div>
+    </div>
+    <div *ngIf="selectedFoodType == 'Beverages'">
+      <label for="foodtype2">Food Type2(choose)</label>
+      <select id="foodtype2" [(ngModel)]="selectedFood" [ngModelOptions]="{standalone: true}" (change)="onFoodChange()">
+        <option value="Coffee">Coffee</option>
+        <option value="Milk">Milk</option>
+        <option value="Juice">Juice</option>
+        <option value="Tea">Tea</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div *ngIf="selectedFoodType == 'Other'">
+      <label for="foodtype2">Food Type2</label>
+      <input type="text" id="foodtype2" name="foodtype2" [(ngModel)]="foodtype2">
+    </div> -->
+    <div>
+      <label for="foodname">Food Name</label>
       <input type="text" id="foodname" name="foodname" [(ngModel)]="foodname">
     </div>
     <div>
-      <label for="foodtype">Food Type:</label>
-      <input type="text" id="foodtype" name="foodtype" [(ngModel)]="foodtype">
-    </div>
-    <div>
-      <label for="foodingredients">Food Ingredients:</label>
+      <label for="foodingredients">Food Ingredients</label>
       <input type="text" id="foodingredients" name="foodingredients" [(ngModel)]="foodingredients">
     </div>
     <div>
       <label for="foodamount">Food Amount:</label>
       <input type="number" id="foodamount" name="foodamount" [(ngModel)]="foodamount">
     </div>
-    <button type="submit">Post</button>
+    <button type="submit" style="margin-left: 10px;">Post</button>
+    <button type="submit" style="margin-left: 30px;" (click)="redirectToHome()">Cancel</button>
   </form>
   <div *ngIf="error">
     <p style="color: red;">Post failed: {{error}}</p>
@@ -26,7 +86,9 @@
     <p style="color: green;">Post Success!</p>
   </div>
 
-  <h2>Posted Foods</h2>
+  <div class="title2">
+    <h2>Posted Foods</h2>
+  </div>
   <table>
     <thead>
       <tr>
@@ -49,71 +111,76 @@
   </table>
 </div>
 
-<div *ngIf="accountType == 'organization'">
-  <h2>Post Activity</h2>
-  <form (ngSubmit)="onActivitySubmit()">
-    <div>
-      <label for="activityname">Activity Name:</label>
-      <input type="text" id="activityname" name="activityname" [(ngModel)]="activityname">
+<div class="organization" *ngIf="accountType == 'organization'">
+  <div class="ocontainer">
+    <h2>Post Activity</h2>
+    <form (ngSubmit)="onActivitySubmit()">
+      <div>
+        <label for="activityname">Activity Name:</label>
+        <input type="text" id="activityname" name="activityname" [(ngModel)]="activityname">
+      </div>
+      <div>
+        <label for="address">Activity Address:</label>
+        <input type="text" id="address" name="address" [(ngModel)]="address">
+      </div>
+      <div>
+        <label for="starttime">Activity Start Time:</label>
+        <input type="text" id="starttime" name="starttime" [(ngModel)]="starttime">
+      </div>
+      <div>
+        <label for="endtime">Activity End Time:</label>
+        <input type="text" id="endtime" name="endtime" [(ngModel)]="endtime">
+      </div>
+      <div>
+        <label for="contactname">Contact Name:</label>
+        <input type="text" id="contactname" name="contactname" [(ngModel)]="contactname">
+      </div>
+      <div>
+        <label for="contactphone">Contact Phone:</label>
+        <input type="text" id="contactphone" name="contactphone" [(ngModel)]="contactphone">
+      </div>
+      <div>
+        <label for="contactemail">Contact Email:</label>
+        <input type="text" id="contactemail" name="contactemail" [(ngModel)]="contactemail">
+      </div>
+      <button type="submit" style="margin-right: 20px; margin-left: 10px">Post</button>
+      <button (click)="redirectToHome()" type="submit">Log Out</button>
+    </form>
+    <div *ngIf="error">
+      <p style="color: red;">Post failed: {{error}}</p>
     </div>
-    <div>
-      <label for="address">Activity Address:</label>
-      <input type="text" id="address" name="address" [(ngModel)]="address">
+    <div *ngIf="success">
+      <p style="color: green;">Post Success!</p>
     </div>
-    <div>
-      <label for="starttime">Activity Start Time:</label>
-      <input type="text" id="starttime" name="starttime" [(ngModel)]="starttime">
-    </div>
-    <div>
-      <label for="endtime">Activity End Time:</label>
-      <input type="text" id="endtime" name="endtime" [(ngModel)]="endtime">
-    </div>
-    <div>
-      <label for="contactname">Contact Name:</label>
-      <input type="text" id="contactname" name="contactname" [(ngModel)]="contactname">
-    </div>
-    <div>
-      <label for="contactphone">Contact Phone:</label>
-      <input type="text" id="contactphone" name="contactphone" [(ngModel)]="contactphone">
-    </div>
-    <div>
-      <label for="contactemail">Contact Email:</label>
-      <input type="text" id="contactemail" name="contactemail" [(ngModel)]="contactemail">
-    </div>
-    <button type="submit">Post</button>
-  </form>
-  <div *ngIf="error">
-    <p style="color: red;">Post failed: {{error}}</p>
-  </div>
-  <div *ngIf="success">
-    <p style="color: green;">Post Success!</p>
-  </div>
 
-  <h2>Posted Activities</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Organization</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Start Time</th>
-        <th>End Time</th>
-        <th>Contact Name</th>
-        <th>Contact Phone</th>
-        <th>Contact Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of postedActivities?.activities">
-        <td>{{ item.orgName }}</td>
-        <td>{{ item.activityName }}</td>
-        <td>{{ item.address }}</td>
-        <td>{{ item.startTime }}</td>
-        <td>{{ item.endTime }}</td>
-        <td>{{ item.contactName }}</td>
-        <td>{{ item.contactPhone }}</td>
-        <td>{{ item.contactEmail }}</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="posted">
+      <h2>Posted Activities</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Organization</th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Contact Name</th>
+          <th>Contact Phone</th>
+          <th>Contact Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of postedActivities?.activities">
+          <td>{{ item.orgName }}</td>
+          <td>{{ item.activityName }}</td>
+          <td>{{ item.address }}</td>
+          <td>{{ item.startTime }}</td>
+          <td>{{ item.endTime }}</td>
+          <td>{{ item.contactName }}</td>
+          <td>{{ item.contactPhone }}</td>
+          <td>{{ item.contactEmail }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

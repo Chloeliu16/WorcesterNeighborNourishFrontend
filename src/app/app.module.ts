@@ -17,6 +17,7 @@ import { DonationComponent } from './donation/donation.component';
 import { ThankdonationComponent } from './donation/thankdonation/thankdonation.component';
 import { JoinusComponent } from './joinus/joinus.component';
 import { ThankjoinusComponent } from './joinus/thankjoinus/thankjoinus.component';
+import { ContactusComponent } from './faqs/contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ThankjoinusComponent } from './joinus/thankjoinus/thankjoinus.component
     DonationComponent,
     ThankdonationComponent,
     JoinusComponent,
-    ThankjoinusComponent
+    ThankjoinusComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,

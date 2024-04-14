@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -30,7 +31,7 @@ export class PostComponent {
   contactemail!: string;
   postedActivities!: any;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const aI = this.route.snapshot.paramMap.get('accountId');
@@ -47,11 +48,23 @@ export class PostComponent {
       this.sendViewActivityRequest();
     }
   }
+  selectedFoodType: string = ' ';
+
+  onTypeChange() {
+    this.foodtype = this.selectedFoodType;
+    console.log('Selected type:', this.foodtype);
+  }
+
+  selectedFood: string = ' ';
 
   onFoodSubmit() {
     this.success = false;
     if (!this.foodname) {
       this.error = 'Empty food name!';
+      return;
+    }
+    if (!this.foodtype) {
+      this.error = 'Empty food type!';
       return;
     }
     if (!this.foodamount) {
@@ -182,5 +195,9 @@ export class PostComponent {
         console.error(error);
       }
     );
+  }
+
+  redirectToHome() {
+    this.router.navigate(['home']);
   }
 }

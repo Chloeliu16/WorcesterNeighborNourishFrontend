@@ -1,7 +1,9 @@
 <h1>Welcome, {{userId}}! </h1>
 
 <div *ngIf="responseData && responseData.success">
-  <h2>Available Food</h2>
+  <div class="title1">
+    <h2>Available Food</h2>
+  </div>
   <table>
     <thead>
       <tr>
@@ -31,7 +33,9 @@
     </tbody>
   </table>
 
-  <h2>Activity</h2>
+  <div class="title2">
+    <h2>Activity</h2>
+  </div>
   <table>
     <thead>
       <tr>
@@ -61,7 +65,10 @@
 </div>
 
 <div *ngIf="previousReservation && previousReservation.success">
-  <h2>Reservation History</h2>
+  <div class="title3">
+    <h2>Reservation History</h2>
+  </div>
+
   <table>
     <thead>
       <tr>
@@ -90,15 +97,15 @@
   <p style="color: red;">View Failed: {{ error }}</p>
 </div>
 
-<h2>Feedback</h2>
+<div class="title4">
+  <h2>Feedback</h2>
+</div>
 <form (ngSubmit)="onFeedbackSubmit()">
-  <div>
+  <div class="feedback">
     <label for="type">Type:</label>
     <input type="text" id="type" name="type" [(ngModel)]="type">
-  </div>
-  <div>
     <label for="info">Info:</label>
-    <input type="text" id="info" name="info" [(ngModel)]="info">
+    <textarea id="info" name="info" [(ngModel)]="info" rows="5"></textarea>
   </div>
   <button type="submit">Submit</button>
 </form>

@@ -10,7 +10,7 @@ body {
 
 .container {
     padding: 20px;
-    min-width: 400px;
+    min-width: 500px;
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -25,10 +25,11 @@ body {
 }
 
 .container {
+    margin-top: 20px;
     font-family: Arial, sans-serif;
-    font-weight: 700;
-    color: rgba(6, 82, 157, 1);
+    color: rgb(60, 96, 195);
     text-align: left;
+    max-height: 200px;
 }
 
 .container label {
@@ -36,24 +37,31 @@ body {
     margin-bottom: 5px;
 }
 
-form {
+#type {
     width: 200px;
+    height: 30px;
+    border-radius: 0.5rem;
+    border: 1.5px solid rgb(60, 96, 195);
+    background-color: rgba(178, 196, 244, 0.685);
 }
 
-h4 {
-    font-weight: 100;
+#type option {
+    color: #333;
+    background-color: rgba(178, 196, 244, 0.685)
 }
 
 .type>h3 {
+    margin-top: -10px;
     font-family: "Sriracha", cursive;
-    color: rgba(6, 82, 157, 1);
+    color: rgb(15, 39, 104);
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 100;
 }
 
 .container input[type="text"],
-input[type="password"] {
+input[type="radio"] {
     display: block;
+    width: 100%;
     box-sizing: border-box;
     margin-bottom: 10px;
     text-align: left;
@@ -79,8 +87,14 @@ input[type="password"] {
     margin-bottom: 5px;
 }
 
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 button {
-    background-color: rgba(6, 82, 157, 1);
+    background-color: rgb(60, 96, 195);
     font-weight: 500;
     color: white;
     padding: 14px 18px;
@@ -93,26 +107,26 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #9cc76b;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 input[type="text"],
-input[type="password"] {
-    background-color: #d1edfc;
-    width: 200px;
-    box-sizing: border-box;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="password"] {
-    border: 1.5px solid rgba(6, 82, 157, 0.873);
+textarea {
+    background-color: rgba(178, 196, 244, 0.685);
+    text-align: left;
+    border: 1.5px solid rgb(60, 96, 195);
     border-radius: 0.5rem;
+    padding: 8px 8px;
     margin: 4px 0 15px 0;
     font-size: 16px;
-    color: rgba(6, 82, 157, 0.873);
+    color: rgb(15, 39, 104);
     display: block;
+    width: calc(100% - 22px);
     box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
 }
