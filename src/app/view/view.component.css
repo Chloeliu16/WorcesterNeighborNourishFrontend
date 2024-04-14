@@ -1,8 +1,183 @@
-table, th, td {
-  border: 1px solid grey;
-  border-collapse: collapse;
+body {
+  background-image: none;
+  background-size: 100%;
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
+.container {
+  padding: 20px;
+  min-width: 1000px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.container {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: rgba(6, 82, 157, 1);
+  text-align: left;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form {
+  width: 1000px;
+}
+
+.title1>h2 {
+  margin-top: 150px;
+}
+
+.title1>h2 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.title2,
+.title3 {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.title4 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+h4 {
+  font-weight: 100;
+}
+
+.type>h3 {
+  font-family: "Sriracha", cursive;
+  color: rgba(6, 82, 157, 1);
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.container div {
+  margin-bottom: 15px;
+}
+
+.feedback {
+  color: #fff;
+  font-weight: 200px;
+  margin-bottom: 5px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback>input {
+  margin-top: 10px;
+  width: 200px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #45a049;
+  background-color: #d8f7da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+}
+
+.feedback>textarea {
+  margin-top: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #45a049;
+  background-color: #d8f7da;
+  border-radius: 4px;
+  border-radius: 0.5rem;
+  min-height: 30px;
+}
+
+button {
+  background-color: rgba(6, 82, 157, 1);
+  font-weight: 500;
+  color: white;
+  padding: 14px 18px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #45a049;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 表格基础样式 */
 table {
-  width: 100%
+  width: 90%;
+  /* 表格宽度占满容器 */
+  border-collapse: collapse;
+  /* 边框合并为单一边框 */
+  font-family: Arial, sans-serif;
+  /* 字体样式 */
+  margin-bottom: 35px;
+}
+
+/* 表头样式 */
+th {
+  background-color: #45a049;
+  /* 背景色 */
+  color: white;
+  /* 字体颜色 */
+  text-align: left;
+  /* 文本对齐 */
+  padding: 12px;
+  /* 内边距 */
+}
+
+/* 表格单元格样式 */
+td {
+  border: 1px solid #ddd;
+  /* 单元格边框 */
+  padding: 8px;
+  /* 单元格内边距 */
+}
+
+/* 鼠标悬停行的样式 */
+tr:hover {
+  background-color: #f5f5f5;
+  /* 鼠标悬停背景色 */
+}
+
+/* 表格行样式，使表格条纹化 */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  /* 偶数行背景色 */
+}
+
+/* 表格行样式，奇数行可选择不同的背景色 */
+tr:nth-child(odd) {
+  background-color: #ffffff;
+  /* 奇数行背景色 */
 }

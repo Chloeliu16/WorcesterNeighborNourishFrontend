@@ -22,6 +22,10 @@ export class FaqsComponent {
     this.router.navigate(['/home']);
   }
 
+  redirectToContact() {
+    this.router.navigate(['/contactus']);
+  }
+
   viewFAQs() {
     this.http.get<any>('http://localhost:8080/faqs').subscribe(
       (response) => {

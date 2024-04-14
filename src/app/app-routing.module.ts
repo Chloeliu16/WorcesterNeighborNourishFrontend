@@ -12,6 +12,7 @@ import { DonationComponent } from './donation/donation.component';
 import { ThankdonationComponent } from './donation/thankdonation/thankdonation.component';
 import { JoinusComponent } from './joinus/joinus.component';
 import { ThankjoinusComponent } from './joinus/thankjoinus/thankjoinus.component';
+import { ContactusComponent } from './faqs/contactus/contactus.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'thankdonation', component: ThankdonationComponent },
   { path: 'joinus', component: JoinusComponent },
   { path: 'thankjoinus', component: ThankjoinusComponent },
+  { path: 'contactus', component: ContactusComponent },
 ];
 
 @NgModule({

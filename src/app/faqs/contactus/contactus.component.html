@@ -1,0 +1,44 @@
+<body>
+    <div>
+        <div class="container">
+            <h2>Send us info</h2>
+            <form (ngSubmit)="onSubmit()">
+                <div class="choose">
+                    <div class="type">
+                        <h3>Thank you for your suggestion!</h3>
+                    </div>
+                </div>
+                <div>
+                    <label for="type">Type</label>
+                    <select id="type" [(ngModel)]="selectedType" [ngModelOptions]="{standalone: true}"
+                        (change)="onTypeChange()">
+                        <option value="individual">Individual</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="organization">Organization</option>
+                        <option value="company">Company</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" [(ngModel)]="email">
+                </div>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="name">
+                </div>
+                <div>
+                    <label for="detail">Detail</label>
+                    <textarea id="detail" name="detail" [(ngModel)]="detail"></textarea>
+                </div>
+                <div class="btn">
+                    <button type="submit" style="margin-right: 50px;">Submit</button>
+                    <button (click)="redirectToHome()">Back</button>
+                </div>
+            </form>
+            <div *ngIf="error">
+                <p style="color: red;">Register failed: {{error}}</p>
+            </div>
+        </div>
+    </div>
+</body>

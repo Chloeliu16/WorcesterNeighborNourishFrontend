@@ -1,8 +1,202 @@
-table, th, td {
-  border: 1px solid grey;
-  border-collapse: collapse;
+body {
+  background-image: none;
+  background-size: 100%;
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 0px;
+}
+
+.container,
+.ocontainer {
+  padding: 20px;
+  min-width: 800px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container,
+.ocontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.container,
+.ocontainer {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: rgba(6, 82, 157, 1);
+  text-align: left;
+}
+
+.ocontainer>h2 {
+  margin-top: 100px;
+}
+
+.container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form {
+  width: 200px;
+}
+
+h4 {
+  font-weight: 100;
+}
+
+.type>h3 {
+  font-family: "Sriracha", cursive;
+  color: rgba(6, 82, 157, 1);
+  font-size: 20px;
+  font-weight: 200;
+}
+
+
+.container input[type="text"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.container div {
+  margin-bottom: 15px;
+}
+
+select {
+  width: 100%;
+  height: 35px;
+  padding: 2px 8px;
+  font-size: 16px;
+  border: 1.5px solid rgba(6, 82, 157, 0.873);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  background-color: rgba(6, 82, 157, 0.151);
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.choose {
+  text-align: left;
+}
+
+.choose div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choose label,
+.choose div {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.posted {
+  margin-top: 25px;
+  color: #2d7e31;
+}
+
+button {
+  background-color: rgba(6, 82, 157, 1);
+  font-weight: 500;
+  color: white;
+  padding: 14px 18px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #45a049;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: rgba(6, 82, 157, 0.151);
+  width: 200px;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 1.5px solid rgba(6, 82, 157, 1);
+  border-radius: 0.5rem;
+  margin: 4px 0 15px 0;
+  font-size: 16px;
+  color: rgba(6, 82, 157, 1);
+  display: block;
+  box-sizing: border-box;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1.5px solid rgba(6, 82, 157, 1);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  background-color: rgba(6, 82, 157, 0.151);
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 table {
-  width: 100%
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 200px;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+
+td {
+  font-weight: normal;
+  color: black;
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-weight: 100px;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #ffffff;
 }

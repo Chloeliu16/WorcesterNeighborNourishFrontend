@@ -29,6 +29,7 @@
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" [(ngModel)]="password">
         </div>
+        <h4>Don't have an account? <a routerLink="/register">Register</a></h4>
         <button type="submit" style="margin-right: 50px;">Login</button>
         <button (click)="redirectToHome()">Back</button>
       </form>
