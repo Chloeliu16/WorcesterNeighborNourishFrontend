@@ -6,7 +6,7 @@
     <div>
       <label for="foodtype">Food Type(choose)</label>
       <select id="foodtype" [(ngModel)]="selectedFoodType" [ngModelOptions]="{standalone: true}"
-        (change)="onTypeChange()">
+              (change)="onTypeChange()">
         <option value="MainDishes">Main Dishes</option>
         <option value="Appetizers">Appetizers</option>
         <option value="Desserts">Desserts</option>
@@ -14,56 +14,6 @@
         <option value="Other">Other</option>
       </select>
     </div>
-    <!-- <div *ngIf="selectedFoodType == 'Appetizers'">
-      <label for="foodtype2">Food Type2(choose)</label>
-      <select id="foodtype2" [(ngModel)]="selectedFood" [ngModelOptions]="{standalone: true}" (change)="onFoodChange()">
-        <option value="Salads">Salads</option>
-        <option value="Soups">Soups</option>
-        <option value="Spring Rolls">Spring Rolls</option>
-        <option value="Fried Chicken">Fried Chicken</option>
-        <option value="Cheese">Cheese</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div *ngIf="selectedFoodType == 'MainDishes'">
-      <label for="foodtype2">Food Type2(choose)</label>
-      <select id="foodtype2" [(ngModel)]="selectedFood" [ngModelOptions]="{standalone: true}" (change)="onFoodChange()">
-        <option value="Burgers">Burgers</option>
-        <option value="Pizza">Pizza</option>
-        <option value="Grilled Meats">Grilled Meats</option>
-        <option value="Pasta">Pasta</option>
-        <option value="Stir-fries">Stir-fries</option>
-        <option value="Bread">Bread</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div *ngIf="selectedFoodType == 'Desserts'">
-      <label for="foodtype2">Food Type2(choose)</label>
-      <select id="foodtype2" [(ngModel)]="selectedFood" [ngModelOptions]="{standalone: true}" (change)="onFoodChange()">
-        <option value="Cakes">Cakes</option>
-        <option value="Cookies">Cookies</option>
-        <option value="Ice Cream">Ice Cream</option>
-        <option value="Pies">Pies</option>
-        <option value="Doughnuts">Doughnuts</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div>
-    </div>
-    <div *ngIf="selectedFoodType == 'Beverages'">
-      <label for="foodtype2">Food Type2(choose)</label>
-      <select id="foodtype2" [(ngModel)]="selectedFood" [ngModelOptions]="{standalone: true}" (change)="onFoodChange()">
-        <option value="Coffee">Coffee</option>
-        <option value="Milk">Milk</option>
-        <option value="Juice">Juice</option>
-        <option value="Tea">Tea</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div *ngIf="selectedFoodType == 'Other'">
-      <label for="foodtype2">Food Type2</label>
-      <input type="text" id="foodtype2" name="foodtype2" [(ngModel)]="foodtype2">
-    </div> -->
     <div>
       <label for="foodname">Food Name</label>
       <input type="text" id="foodname" name="foodname" [(ngModel)]="foodname">
@@ -109,6 +59,37 @@
       </tr>
     </tbody>
   </table>
+
+  <button type="submit" (click)="onShowSupplier()">Click to add supplier info</button>
+  <form (ngSubmit)="onSupplierSubmit()" *ngIf="showAddSupplier">
+    <div>
+      <label for="suppliername">Supplier Name</label>
+      <input type="text" id="suppliername" name="suppliername" [(ngModel)]="suppliername">
+    </div>
+    <div>
+      <label for="suppliertype">Supplier Type</label>
+      <input type="text" id="suppliertype" name="suppliertype" [(ngModel)]="suppliertype">
+    </div>
+    <div>
+      <label for="supplieremail">Supplier Email</label>
+      <input type="text" id="supplieremail" name="supplieremail" [(ngModel)]="supplieremail">
+    </div>
+    <div>
+      <label for="supplierphone">Supplier Phone</label>
+      <input type="text" id="supplierphone" name="supplierphone" [(ngModel)]="supplierphone">
+    </div>
+    <div>
+      <label for="suppliercertificate">Supplier Certificate</label>
+      <input type="text" id="suppliercertificate" name="suppliercertificate" [(ngModel)]="suppliercertificate">
+    </div>
+    <button type="submit" style="margin-left: 10px;">Submit</button>
+  </form>
+  <div *ngIf="supplierError">
+    <p style="color: red;">Add supplier failed: {{supplierError}}</p>
+  </div>
+  <div *ngIf="supplierSuccess">
+    <p style="color: green;">Add supplier success!</p>
+  </div>
 </div>
 
 <div class="organization" *ngIf="accountType == 'organization'">

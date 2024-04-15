@@ -21,6 +21,15 @@ export class PostComponent {
   foodingredients!: string;
   foodamount!: number;
   postedFoods!: any;
+  // For Restaurant Add Supplier
+  suppliername!: string;
+  suppliertype!: string;
+  supplierphone!: string;
+  supplieremail!: string;
+  suppliercertificate!: string;
+  supplierError!: string;
+  supplierSuccess: boolean = false;
+  showAddSupplier: boolean = false;
   // For Organization
   activityname!: string;
   address!: string;
@@ -99,6 +108,58 @@ export class PostComponent {
         return;
       }
     );
+  }
+
+  onSupplierSubmit() {
+    this.supplierSuccess = false;
+    if (!this.suppliername) {
+      this.supplierError = 'Empty Supplier Name!';
+      return;
+    }
+    if (!this.suppliertype) {
+      this.supplierError = 'Empty Supplier Type!';
+    }
+    if (!this.supplieremail) {
+      this.supplierError = 'Empty Supplier Email!';
+    }
+    if (!this.supplierphone) {
+      this.supplierError = 'Empty Supplier Phone!';
+    }
+    if (!this.suppliercertificate) {
+      this.supplierError = 'Empty Supplier Certificate!';
+    }
+
+    let postData = {
+      restUsername: this.accountId,
+      name: this.suppliername,
+      phone: this.supplierphone,
+      email: this.supplieremail,
+      type: this.suppliertype,
+      foodSafetyCertification: this.suppliercertificate
+    }
+
+    this.supplierError = '';
+
+    this.http.post<any>('http://localhost:8080/supplier', postData).subscribe(
+      (response) => {
+        this.postResponse = response;
+        if (!this.postResponse.success) {
+          this.supplierError = this.postResponse.failureReason;
+        }
+        this.supplierSuccess = this.postResponse.success;
+        this.sendViewActivityRequest();
+      },
+      (error) => {
+        this.supplierError = error.message;
+        this.supplierSuccess = this.postResponse.success;
+        console.error(error);
+        return;
+      }
+    );
+  }
+
+  onShowSupplier() {
+    this.showAddSupplier = !this.showAddSupplier;
   }
 
   onActivitySubmit() {
