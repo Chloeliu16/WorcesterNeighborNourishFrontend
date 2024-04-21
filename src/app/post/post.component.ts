@@ -21,6 +21,7 @@ export class PostComponent {
   foodingredients!: string;
   foodamount!: number;
   postedFoods!: any;
+  ordersResponse!: any;
   // For Restaurant Add Supplier
   suppliername!: string;
   suppliertype!: string;
@@ -53,6 +54,7 @@ export class PostComponent {
     }
     if (this.accountType == "restaurant") {
       this.sendViewFoodRequest();
+      this.sendViewOrderRequest();
     } else if (this.accountType == "organization") {
       this.sendViewActivityRequest();
     }
@@ -235,6 +237,21 @@ export class PostComponent {
     this.http.post<any>('http://localhost:8080/viewfood', viewFoodRequest).subscribe(
       (response) => {
         this.postedFoods = response;
+      },
+      (error) => {
+        this.error = 'An error occurred while fetching data.';
+        console.error(error);
+      }
+    );
+  }
+
+  sendViewOrderRequest() {
+    let viewOrderRequest = {
+      restUsername: this.accountId,
+    }
+    this.http.post<any>('http://localhost:8080/vieworder', viewOrderRequest).subscribe(
+      (response) => {
+        this.ordersResponse = response;
       },
       (error) => {
         this.error = 'An error occurred while fetching data.';
