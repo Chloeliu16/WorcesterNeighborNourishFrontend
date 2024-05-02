@@ -130,7 +130,9 @@ button:hover {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="date"],
+input[type="datetime-local"] {
   background-color: rgba(6, 82, 157, 0.151);
   width: 200px;
   box-sizing: border-box;
@@ -139,7 +141,9 @@ input[type="password"] {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="date"],
+input[type="datetime-local"] {
   border: 1.5px solid rgba(6, 82, 157, 1);
   border-radius: 0.5rem;
   margin: 4px 0 15px 0;
@@ -157,7 +161,7 @@ input[type="number"] {
   border-radius: 0.5rem;
   box-sizing: border-box;
   margin-top: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   background-color: rgba(6, 82, 157, 0.151);
 }
 
@@ -199,4 +203,12 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   background-color: #ffffff;
+}
+
+.title {
+  margin-top: 200px;
+}
+
+.title2 {
+  margin-top: 200px;
 }

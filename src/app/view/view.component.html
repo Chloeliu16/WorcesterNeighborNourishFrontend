@@ -1,4 +1,4 @@
-<h1>Welcome, {{userId}}! </h1>
+<h1>Welcome, {{userId}} ! </h1>
 
 <div *ngIf="responseData && responseData.success">
   <div class="title1">
@@ -28,7 +28,9 @@
         <td>{{ item.restPhone }}</td>
         <td>{{ item.restEmail }}</td>
         <td>{{ item.restAddress }}</td>
-        <td><a [routerLink]="['/reserve', userId, item.foodName, item.restUsername, item.amount]">Reserve</a></td>
+        <td><button><a
+              [routerLink]="['/reserve', userId, item.foodName, item.restUsername, item.amount]">Reserve</a></button>
+        </td>
       </tr>
     </tbody>
   </table>
